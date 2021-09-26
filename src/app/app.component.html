@@ -4,26 +4,24 @@
     <span class="navbar-toggler-icon"></span>
   </button>
         <img width="200px" src="https://www.uptc.edu.co/sitio/export/sites/default/portal/.content/imagenes/header-v2/logo2_nuevoSitio20.png_1345499139.png" alt="" />
-        <a class="navbar-brand" href="#">Proyecto Simulación</a>
+        <a class="navbar-brand" routerLink="/">Proyecto Simulación</a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" routerLink="/home">Inico</a>
+                    <a class="nav-link" aria-current="page" routerLink="/">Inico</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/metodos/cuadrados-medios">Simulación</a>
+                    <a class="nav-link" routerLink="/Simulacion" routerLinkActive="active">Simulación</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="pruebas/prueba-medias">Estadisticas</a>
+                    <a class="nav-link" routerLink="/Estadisticas" routerLinkActive="active">Estadisticas</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<br />
 
-<div class="container">
+
+<div>
     <router-outlet></router-outlet>
 </div>
-
-<br />

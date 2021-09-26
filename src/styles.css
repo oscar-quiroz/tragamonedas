@@ -6,3 +6,14 @@ img {
     top: 0;
     object-fit: scale-down;
 }
+
+:root {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}

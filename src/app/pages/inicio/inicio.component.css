@@ -1,0 +1,29 @@
+.casino {
+    background-image: url("../../../assets/casino2.jpg");
+    height: 92vh;
+    width: 100%;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.presentacion {
+    background-color: rgba(255, 255, 255, 0.644);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.iniciar {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    height: 70px;
+    width: 80px;
+}
