@@ -1,9 +1,24 @@
 <div class="cont">
-    <div>
-        Comenzar simualcion
+    <div *ngIf="true" class="start animate__animated animate__fadeInLeft animate__delay-0.5s">
+        <div class="contenido ">
+            <h2>Simulación</h2>
+            <p>Simula un casino con 10 maquinas tragamonedas durante X días.</p>
+            <button (click)="iniciar()" class="btn btn-danger btn-sm"> Iniciar Simulacion</button>
+        </div>
+
     </div>
+    <br>
     <div class="simulacion">
 
-        <app-maquina></app-maquina>
+        <h1>Resultados</h1>
+        <br>
+        <div class="maquinas">
+            <app-maquina></app-maquina>
+            <app-maquina></app-maquina>
+            <app-maquina></app-maquina>
+            <app-maquina></app-maquina>
+        </div>
+
+
     </div>
 </div>

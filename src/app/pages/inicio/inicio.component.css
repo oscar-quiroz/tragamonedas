@@ -1,5 +1,7 @@
 .casino {
-    background-image: url("../../../assets/casino2.jpg");
+    background-color: #837960;
+    background-image: url("../../../assets/casino3.jpg");
+    background-repeat: no-repeat;
     height: 92vh;
     width: 100%;
     background-size: 100% 100%;

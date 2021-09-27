@@ -1,9 +1,40 @@
-.simulacion {
+.start {
+    display: flex;
+    width: 500px;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    background-image: linear-gradient(to left, transparent, rgb(59, 14, 14) 70%), url("/assets/start2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    color: white
+}
+
+.contenido {
+    width: 70%;
     padding: 20px;
 }
 
-.cont {
+.simulacion {
+    padding: 20px 20px;
     background-color: white;
-    margin: 10px;
+    border-radius: 10px;
+}
+
+.maquinas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cont {
     height: 100vh;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn-danger {
+    background-color: rgb(156, 46, 32);
+    border: 1px solid rgb(156, 46, 32);
 }
