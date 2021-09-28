@@ -7,6 +7,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { SimulacionComponent } from './pages/simulacion/simulacion.component';
 import { EstadisticasComponent } from './pages/estadisticas/estadisticas.component';
 import { MaquinaComponent } from './components/maquina/maquina.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MaquinaComponent } from './components/maquina/maquina.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
