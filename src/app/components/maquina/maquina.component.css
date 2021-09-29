@@ -1,12 +1,26 @@
 .info-maquina {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 20px;
     margin: 20px 0px 20px 0px;
 }
 
 .card {
     width: 700px;
     border: none;
-    -webkit-box-shadow: 9px 8px 4px -2px rgba(0, 0, 0, 0.27);
-    box-shadow: 9px 8px 4px -2px rgba(0, 0, 0, 0.27);
+    background-image: linear-gradient(to right, transparent, rgb(10, 10, 10) 60%), url("/assets/slot_machine3.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: 0.5s;
+}
+
+.trans {
+    background-color: rgba(151, 148, 148, 0);
 }

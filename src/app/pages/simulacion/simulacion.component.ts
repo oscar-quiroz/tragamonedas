@@ -13,7 +13,7 @@ export class SimulacionComponent implements OnInit {
 
   public data=[];
 
-  public starter= 'animate__fadeInLeft animate__delay-0.5s';
+  public starter= 'animate__fadeInLeft';
 
   public isData=false;
 
@@ -25,7 +25,7 @@ export class SimulacionComponent implements OnInit {
 
   iniciar(){
     this.load=true;
-    this.starter='animate__fadeOutLeftBig animate__delay-0.5s'
+    this.starter='animate__fadeOutLeftBig';
     setTimeout(() => {
       this.data = this.simulationService.play();
     

@@ -1,44 +1,44 @@
-<div class="card mb-3">
+<div class="card mb-3 ">
     <div class="row g-0">
-        <div class="col-md-4">
-            <img src="../../../assets/slot_machine.jpg" class="img-fluid rounded-start sim" alt="..." />
-        </div>
-        <div class="col-md-8">
+        <div class="col-md-5 trans"></div>
+        <div class="col-md-7">
             <div class="card-body">
                 <h5 class="card-title">
-                    <strong> {{ machineInfo.name }} - {{machineInfo.machine.name}}</strong>
-                </h5>
-                <h6 class="card-title">
-                    <strong>Player:</strong> {{ machineInfo.player.name }} -
+                    <strong>
+            {{ machineInfo.name }} - {{ machineInfo.machine.name }}</strong
+          >
+        </h5>
+        <h6 class="card-title">
+          <strong>Player:</strong> {{ machineInfo.player.name }} -
                     <strong> Start money: </strong> {{ machineInfo.player.finalMoney | currency }}
-                </h6>
-                <div class="info-maquina">
-                    <div>
-                        <p class="card-text">
-                            <strong>Rounds:</strong> {{ machineInfo.player.timePlayed }}
-                        </p>
-                        <p class="card-text">
-                            <strong>Win rounds:</strong> {{ machineInfo.player.winRounds }}
-                        </p>
-                        <p class="card-text">
-                            <strong>Lost rounds:</strong> {{ machineInfo.player.lostRounds }}
-                        </p>
+                    </h6>
+                    <div class="info-maquina">
+                        <div>
+                            <p class="card-text">
+                                <strong>Rounds:</strong> {{ machineInfo.player.timePlayed }}
+                            </p>
+                            <p class="card-text">
+                                <strong>Win rounds:</strong> {{ machineInfo.player.winRounds }}
+                            </p>
+                            <p class="card-text">
+                                <strong>Lost rounds:</strong> {{ machineInfo.player.lostRounds }}
+                            </p>
+                        </div>
+                        <div>
+                            <p class="card-text">
+                                <strong>Earned money:</strong> {{ machineInfo.player.earnedMoney | currency }}
+                            </p>
+                            <p class="card-text">
+                                <strong>Lost Money:</strong> {{ machineInfo.player.lostMoney | currency }}
+                            </p>
+                            <p class="card-text">
+                                <strong>Final money:</strong> {{ machineInfo.player.finalMoney | currency }}
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <p class="card-text">
-                            <strong>Earned money:</strong> {{ machineInfo.player.earnedMoney | currency }}
-                        </p>
-                        <p class="card-text">
-                            <strong>Lost Money:</strong> {{ machineInfo.player.lostMoney | currency }}
-                        </p>
-                        <p class="card-text">
-                            <strong>Final money:</strong> {{ machineInfo.player.finalMoney | currency }}
-                        </p>
-                    </div>
-                </div>
-                <p class="card-text">
-                    <small class="text-muted"><strong>Horas de juego:</strong>20</small>
-                </p>
+                    <p class="card-text">
+                        <!-- #region  small class="text-muted"><strong>Horas de juego:</strong>20</small> -->
+                    </p>
             </div>
         </div>
     </div>
