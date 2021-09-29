@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./maquina.component.css'],
 })
 export class MaquinaComponent implements OnInit {
+  
   @Input() machineInfo:any = [];
 
   constructor() {}

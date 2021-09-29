@@ -5,18 +5,35 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title"><strong>  {{ machineInfo.name }}</strong></h5>
-                <h6 class="card-title"><strong>Player:</strong> {{ machineInfo.player.name }} - {{machineInfo.player.startMoney | currency}} </h6>
+                <h5 class="card-title">
+                    <strong> {{ machineInfo.name }} - {{machineInfo.machine.name}}</strong>
+                </h5>
+                <h6 class="card-title">
+                    <strong>Player:</strong> {{ machineInfo.player.name }} -
+                    <strong> Start money: </strong> {{ machineInfo.player.finalMoney | currency }}
+                </h6>
                 <div class="info-maquina">
                     <div>
-                        <p class="card-text"><strong>Total games:</strong> {{machineInfo.player.lostRounds + machineInfo.player.winRounds}}</p>
-                        <p class="card-text"><strong>Nro de ronda ganadas:</strong> {{machineInfo.player.winRounds}}</p>
-                        <p class="card-text"><strong>Nro de rondas perdidas:</strong> {{machineInfo.player.lostRounds}}</p>
+                        <p class="card-text">
+                            <strong>Rounds:</strong> {{ machineInfo.player.timePlayed }}
+                        </p>
+                        <p class="card-text">
+                            <strong>Win rounds:</strong> {{ machineInfo.player.winRounds }}
+                        </p>
+                        <p class="card-text">
+                            <strong>Lost rounds:</strong> {{ machineInfo.player.lostRounds }}
+                        </p>
                     </div>
                     <div>
-                        <p class="card-text"><strong>dinero ganado:</strong> {{machineInfo.player.earnedMoney | currency}}</p>
-                        <p class="card-text"><strong>dinero perdido:</strong> {{machineInfo.player.lostMoney | currency}}</p>
-                        <p class="card-text"><strong>Nro rondas perdidas:</strong> {{machineInfo.player.lostRounds}}</p>
+                        <p class="card-text">
+                            <strong>Earned money:</strong> {{ machineInfo.player.earnedMoney | currency }}
+                        </p>
+                        <p class="card-text">
+                            <strong>Lost Money:</strong> {{ machineInfo.player.lostMoney | currency }}
+                        </p>
+                        <p class="card-text">
+                            <strong>Final money:</strong> {{ machineInfo.player.finalMoney | currency }}
+                        </p>
                     </div>
                 </div>
                 <p class="card-text">
