@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
+import { SlotMachineServiceService } from '../../slot-machine-service.service';
 
 @Component({
   selector: 'app-simulacion',
@@ -8,13 +9,33 @@ import { Router } from '@angular/router';
 })
 export class SimulacionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private simulationService:SlotMachineServiceService) { }
+
+  public data=[];
+
+  public starter= 'animate__fadeInLeft animate__delay-0.5s';
+
+  public isData=false;
+
+  public load =false;
 
   ngOnInit(): void {
+    
   }
 
   iniciar(){
-
+    this.load=true;
+    this.starter='animate__fadeOutLeftBig animate__delay-0.5s'
+    setTimeout(() => {
+      this.data = this.simulationService.play();
+    
+      if(this.data.length > 0 ){
+        this.isData=true;
+        this.load=false;
+      }
+      
+    }, 1000);
+   
   }
 
 }

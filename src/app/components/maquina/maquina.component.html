@@ -1,24 +1,27 @@
 <div class="card mb-3">
     <div class="row g-0">
         <div class="col-md-4">
-            <img src="../../../assets/slot_machine.jpg" class="img-fluid rounded-start sim" alt="...">
+            <img src="../../../assets/slot_machine.jpg" class="img-fluid rounded-start sim" alt="..." />
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title">Máquina N°1</h5>
+                <h5 class="card-title"><strong>  {{ machineInfo.name }}</strong></h5>
+                <h6 class="card-title"><strong>Player:</strong> {{ machineInfo.player.name }} - {{machineInfo.player.startMoney | currency}} </h6>
                 <div class="info-maquina">
                     <div>
-                        <p class="card-text"><strong>Nro de rondas:</strong> 10</p>
-                        <p class="card-text"><strong>Nro de ronda ganadas:</strong> 10</p>
-                        <p class="card-text"><strong>Nro de rondas perdidas:</strong> 10</p>
+                        <p class="card-text"><strong>Total games:</strong> {{machineInfo.player.lostRounds + machineInfo.player.winRounds}}</p>
+                        <p class="card-text"><strong>Nro de ronda ganadas:</strong> {{machineInfo.player.winRounds}}</p>
+                        <p class="card-text"><strong>Nro de rondas perdidas:</strong> {{machineInfo.player.lostRounds}}</p>
                     </div>
                     <div>
-                        <p class="card-text"><strong>dinero ganado:</strong> 10</p>
-                        <p class="card-text"><strong>dinero perdido:</strong> 10</p>
-                        <p class="card-text"><strong>Nro rondas perdidas:</strong> 10</p>
+                        <p class="card-text"><strong>dinero ganado:</strong> {{machineInfo.player.earnedMoney | currency}}</p>
+                        <p class="card-text"><strong>dinero perdido:</strong> {{machineInfo.player.lostMoney | currency}}</p>
+                        <p class="card-text"><strong>Nro rondas perdidas:</strong> {{machineInfo.player.lostRounds}}</p>
                     </div>
                 </div>
-                <p class="card-text"><small class="text-muted"><strong>Horas de juego:</strong>20</small></p>
+                <p class="card-text">
+                    <small class="text-muted"><strong>Horas de juego:</strong>20</small>
+                </p>
             </div>
         </div>
     </div>

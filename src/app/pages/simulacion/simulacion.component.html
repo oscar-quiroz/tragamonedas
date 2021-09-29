@@ -1,5 +1,5 @@
 <div class="cont">
-    <div *ngIf="true" class="start animate__animated animate__fadeInLeft animate__delay-0.5s">
+    <div [ngClass]="starter" *ngIf="!isData" class="start animate__animated ">
         <div class="contenido ">
             <h2 style="text-align: center">Simulación</h2>
             <p>Simula un casino con 10 maquinas tragamonedas durante X días.</p>
@@ -7,17 +7,29 @@
         </div>
 
     </div>
-    <br>
-    <div class="simulacion">
 
-        <h1>Resultados</h1>
-        <br>
-        <div class="maquinas">
-            <app-maquina></app-maquina>
-            <app-maquina></app-maquina>
-            <app-maquina></app-maquina>
-            <app-maquina></app-maquina>
+    <br>
+    <div class="simulacion  ">
+
+        <div class="lds-roller" *ngIf="load">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
+        <div class="data animate__animated animate__fadeIn" *ngIf="isData">
+            <h1>Resultados</h1>
+            <br>
+            <div class="maquinas">
+                <app-maquina *ngFor="let item of data" [machineInfo]="item"></app-maquina>
+
+            </div>
+        </div>
+
 
 
     </div>

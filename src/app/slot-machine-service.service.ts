@@ -21,8 +21,9 @@ export class SlotMachineServiceService {
         });
       }*/
 
+     
       //Este Data es el archivo identico en json que llega al front
-    let data = [
+    return [
       {
         "name": "Game 0",
         "player": {

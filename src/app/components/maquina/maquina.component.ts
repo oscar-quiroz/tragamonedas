@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-maquina',
   templateUrl: './maquina.component.html',
-  styleUrls: ['./maquina.component.css']
+  styleUrls: ['./maquina.component.css'],
 })
 export class MaquinaComponent implements OnInit {
+  @Input() machineInfo:any = [];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    console.log(this.machineInfo)
   }
-
 }
