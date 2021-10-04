@@ -1,17 +1,91 @@
-<p>estadisticas works!</p>
-
-<h1>Estadisticas de la simulación !!!</h1>
-<div class="container">
-
-    <div class="row">
-        <div class="col-5">
-            <app-grafico-barras></app-grafico-barras>
+<div class="cont">
+    <div [ngClass]="starter" *ngIf="!isData" class="start animate__animated">
+        <div class="contenido">
+            <h2>Estadisticas</h2>
+            <p>
+                Obtener las frecuencias de apariciend de las diferentes combinaciones.
+            </p>
+            <button (click)="iniciar()" class="btn btn-primary btn-sm">
+        Obtener estadisticas
+      </button>
         </div>
-        <div class="col-5">
-            <app-grafico-barras></app-grafico-barras>
-        </div>
-
     </div>
 
+    <div class="container">
+        <div class="stats">
+            <div class="lds-roller" *ngIf="load">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
 
+        <div class="row" *ngIf="isData">
+            <h1 style="text-align: center">Estadisticas de la simulación</h1>
+            <hr>
+            <div class="row stats">
+                <div class="col-8">
+                    <app-grafico-barras [barChartLabels]="labels" [barChartData]="chartData"></app-grafico-barras>
+                </div>
+                <div class="col-3">
+                    <table class="table">
+                        <thead>
+                            <tr class="table-primary siu">
+                                <th scope="col ">Combinaciones</th>
+                                <th scope="col ">Frecuencias</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data | slice: 0:7">
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.count }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+            <h1 style="text-align: center;">Otro titulo :;v</h1>
+            <hr>
+            <div class="row graph">
+                <br>
+                <div class="col-6">
+                    <table class="table">
+                        <thead>
+                            <tr class="table-primary siu">
+                                <th scope="col ">Descripcion</th>
+                                <th scope="col ">Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data | slice: 8:11">
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.count | currency }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-4 ">
+                    <div class="info">
+                        <p><strong>Porrcentaje de ganancia:</strong></p>
+                        <p>{{ porcentajeGanancia | percent }}</p>
+                    </div>
+                    <div class="info">
+                        <p><strong>Promedio de tiempo de juego:</strong></p>
+                        <p>{{ promedioT }} horas</p>
+                    </div>
+                    <div class="info">
+                        <p><strong>Número total de rondas:</strong></p>
+                        <p>{{ RondasT }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

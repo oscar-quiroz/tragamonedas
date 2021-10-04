@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
-import { Label } from 'ng2-charts';
+import { Color, Label } from 'ng2-charts';
 
 @Component({
   selector: 'app-grafico-barras',
@@ -10,7 +10,6 @@ import { Label } from 'ng2-charts';
 export class GraficoBarrasComponent implements OnInit {
   public barChartOptions: ChartOptions = {
     responsive: true,
-    // We use these empty structures as placeholders for dynamic theming.
     scales: { xAxes: [{}], yAxes: [{}] },
     plugins: {
       datalabels: {
@@ -19,26 +18,31 @@ export class GraficoBarrasComponent implements OnInit {
       },
     },
   };
-  public barChartLabels: Label[] = [
-    '2006',
-    '2007',
-    '2008',
-    '2009',
-    '2010',
-    '2011',
-    '2012',
+
+  @Input() public colors: Color[] = [
+    { backgroundColor: ['#6857e6', '#009fee', '#f02059'] },
   ];
+
+  @Input() public barChartLabels: Label[] 
+
+
   public barChartType: ChartType = 'bar';
+
   public barChartLegend = true;
 
-  public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
-  ];
+
+  
+  @Input() public barChartData: ChartDataSets[];
+
+
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  
+  }
+
+
 
   // events
   public chartClicked({
@@ -61,16 +65,5 @@ export class GraficoBarrasComponent implements OnInit {
     console.log(event, active);
   }
 
-  public randomize(): void {
-    // Only Change 3 values
-    this.barChartData[0].data = [
-      Math.round(Math.random() * 100),
-      59,
-      80,
-      Math.random() * 100,
-      56,
-      Math.random() * 100,
-      40,
-    ];
-  }
+
 }
