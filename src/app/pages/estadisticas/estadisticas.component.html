@@ -50,7 +50,7 @@
                 </div>
             </div>
             <br>
-            <h1 style="text-align: center;">Otro titulo :;v</h1>
+            <h1 style="text-align: center;">Resultados</h1>
             <hr>
             <div class="row graph">
                 <br>
@@ -83,6 +83,72 @@
                     <div class="info">
                         <p><strong>Número total de rondas:</strong></p>
                         <p>{{ RondasT }}</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!---- grafica de los 1000 datos--->
+
+            <h1 style="text-align: center">Estadisticas de la simulación</h1>
+            <hr>
+
+            <div class="row stats">
+                <div class="col-8">
+                    <app-grafico-barras [barChartLabels]="labels" [barChartData]="chartData1000"></app-grafico-barras>
+                </div>
+                <div class="col-3">
+                    <table class="table">
+                        <thead>
+                            <tr class="table-primary siu">
+                                <th scope="col ">Combinaciones</th>
+                                <th scope="col ">Frecuencias</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data1000 | slice: 0:7">
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.count }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+            <h1 style="text-align: center;">Resultados</h1>
+            <hr>
+
+            <div class="row graph">
+                <br>
+                <div class="col-6">
+                    <table class="table">
+                        <thead>
+                            <tr class="table-primary siu">
+                                <th scope="col ">Descripcion</th>
+                                <th scope="col ">Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data1000 | slice: 8:11">
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.count | currency }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-4 ">
+                    <div class="info">
+                        <p><strong>Porrcentaje de ganancia:</strong></p>
+                        <p>{{porcentajeGanancia1000}}%</p>
+                    </div>
+                    <div class="info">
+                        <p><strong>Promedio de tiempo de juego:</strong></p>
+                        <p>{{ promedioT1000 }} horas</p>
+                    </div>
+                    <div class="info">
+                        <p><strong>Número total de rondas:</strong></p>
+                        <p>{{ RondasT1000 }}</p>
                     </div>
                 </div>
             </div>

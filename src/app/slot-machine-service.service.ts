@@ -1,33 +1,35 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SlotMachineServiceService {
-
-  constructor(protected http: HttpClient) {
-  }
+  constructor(protected http: HttpClient) {}
 
   getById(id: number): Observable<any> {
-    return this.http.get<any>("http://localhost:8080/api/casino/play");
+    return this.http.get<any>('http://localhost:8080/api/casino/play');
   }
 
   play() {
     //MEtodo para llamar el back
-   /* this.http.get<any>("http://localhost:8082/api/casino/play").subscribe((data: any) => {
+    /* this.http.get<any>("http://localhost:8082/api/casino/play").subscribe((data: any) => {
             console.log(data);
 
             return data;
         });
-      }*/ 
-      
-  return this.http.get<any>("http://localhost:8082/api/casino/play");
-      }
+      }*/
 
-  getStats(){
-    return this.http.get<any>("http://localhost:8082/api/casino/stats");
+    return this.http.get<any>('http://localhost:8082/api/casino/play');
+  }
+
+  getStats1000() {
+    return this.http.get<any>('http://localhost:8082/api/casino/play1000');
+  }
+
+  getStats() {
+    return this.http.get<any>('http://localhost:8082/api/casino/stats');
     /*return [
       {
           "name": "3 BAR",

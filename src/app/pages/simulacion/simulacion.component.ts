@@ -216,6 +216,7 @@ export class SimulacionComponent implements OnInit {
 
         this.data = data;})
     }, 1000)
+    
 
     setTimeout(() => {
       if(this.data.length > 0 ){
