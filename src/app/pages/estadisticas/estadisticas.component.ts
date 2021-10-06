@@ -95,19 +95,20 @@ export class EstadisticasComponent implements OnInit {
         });
 
         this.porcentajeGanancia = this.calcularPorcentaje();
+        this.porcentajeGanancia1000 = this.calcularPorcentaje1000();
         this.obtenerTiempo();
       }, 1000);
     }
   }
 
   obtenerTiempo() {
-    this.promedioT = this.data[7].count;
+    this.promedioT = this.data[7].count /60;
     console.log('promedio de timepo: ', this.promedioT);
     this.RondasT = this.data[11].count;
     console.log('Rondas jugadas: ', this.RondasT);
 
-    this.promedioT1000 = this.data1000[7].count;
-
+    this.promedioT1000 = this.data1000[7].count /60;
+    console.log('promedio de timepo: ', this.promedioT1000);
     this.RondasT1000 = this.data1000[11].count;
   }
 
