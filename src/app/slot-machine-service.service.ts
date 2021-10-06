@@ -27,8 +27,8 @@ export class SlotMachineServiceService {
       }
 
   getStats(){
-    //return this.http.get<any>("http://localhost:8082/api/casino/stats");
-    return [
+    return this.http.get<any>("http://localhost:8082/api/casino/stats");
+    /*return [
       {
           "name": "3 BAR",
           "count": 0
@@ -77,6 +77,6 @@ export class SlotMachineServiceService {
           "name": "Total rondas jugadas",
           "count": 5591
       }
-  ]
+  ]*/
   }
 }

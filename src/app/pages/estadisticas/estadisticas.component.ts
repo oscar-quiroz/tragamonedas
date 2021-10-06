@@ -32,14 +32,18 @@ export class EstadisticasComponent implements OnInit {
 
   ngOnInit(): void {}
 
+
+  
   iniciar() {
    
 if(!this.isData){
   
   this.load = true;
   this.starter = 'animate__fadeOutLeftBig';
-  this.data = this.simulationService.getStats();
+  this.data = this.simulationService.getStats().subscribe((data: any) => {
+    console.log(data);
 
+    this.data = data;})
 
   setTimeout(() => {
     this.data.forEach((element) => {
@@ -48,19 +52,12 @@ if(!this.isData){
       this.labels.splice(7, 11);
       this.barData.splice(7, 11);
 
-
-
   this.isData = true;
   this.load=false;
     });
     this.porcentajeGanancia= this.calcularPorcentaje();
     this.obtenerTiempo();
   }, 1000);
-
-
-  
-
-
   
 }
 
@@ -80,7 +77,7 @@ if(!this.isData){
   console.log("ganado casino: ", this.totalGanadoCasino)
     this.totalInvertido= this.data[10].count;
     console.log("invertido: ", this.totalInvertido)
-    return (this.totalGanadoCasino*100) / this.totalInvertido
+    return ((this.totalGanadoCasino*100) / this.totalInvertido)
 
   }
 }
